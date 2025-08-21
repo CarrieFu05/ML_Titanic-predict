@@ -131,4 +131,4 @@ pd.DataFrame(confusion_matrix(y_test, y_pred), columns=["Predicted not Survived"
 
 # 匯出模型
 import joblib
-joblib.dump(model, "Titanic_LR_20241116_2.pkl", compress=3)
+joblib.dump(model, "Titanic_model_export.pkl", compress=3)
