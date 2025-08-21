@@ -89,7 +89,7 @@ import joblib
 import pandas as pd
 
 # 載入模型
-model = joblib.load("Titanic_LR_20241116_2.pkl")
+model = joblib.load("Titanic_model_export.pkl")
 
 # 測試資料 (假設已完成前處理)
 X_test = pd.read_csv("test_processed.csv")
