@@ -10,10 +10,10 @@
 ## 📂 專案結構
 
 .
-├── train_data_titanic.csv # 訓練資料
-├── titanic_model.py # 建模程式碼 (Logistic Regression)
-├── Titanic_LR_20241116_2.pkl # 訓練完成的模型 (joblib)
-└── README.md # 專案說明
+├── train_data_titanic.csv # 訓練資料 <br>
+├── titanic_model.py # 建模程式碼 (Logistic Regression) <br>
+├── Titanic_model_export.pkl # 訓練完成的模型 (joblib) <br>
+└── README.md # 專案說明 
 
 
 ---
