@@ -11,6 +11,7 @@
 
 . <br>
 ├── train_data_titanic.csv # 訓練資料 <br>
+├── requirements.txt # 套件安裝清單 <br>
 ├── titanic_model.py # 建模程式碼 (Logistic Regression) <br>
 ├── Titanic_model_export.pkl # 訓練完成的模型 (joblib) <br>
 └── README.md # 專案說明 
