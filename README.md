@@ -23,7 +23,7 @@
 1. **資料探索 (EDA)**  
    - 使用 `pandas` 與 `seaborn` 進行初步探索  
    - 檢查欄位分佈、空值比例、相關性  
-   - 視覺化 (pairplot, heatmap)
+   - 視覺化 (pairplot, countplot, volinplot)
 
 2. **資料前處理**
    - 刪除高比例缺失值的 `Cabin` 欄位  
@@ -46,8 +46,9 @@
 
 ## 📊 模型表現
 
-- **Accuracy (本地測試集)**: 約 0.82  
-- **Precision / Recall**: 使用混淆矩陣計算  
+- **Accuracy (本地測試集)**: 約 0.832
+- **Precision (本地測試集)**: 約 0.828
+- **Recall (本地測試集)**: 約 0.726
 - **Kaggle Public Score**: **0.75358**
 
 | 指標 | 說明 |
@@ -60,8 +61,15 @@
 
 ## 🖼️ 視覺化成果
 
-### 📌 生存與票價的關係
-![fare_vs_survival]()
+### 📌 生存與票價及艙等的關係
+![Fare_vs_Survival](https://github.com/CarrieFu05/ML_Titanic-predict/blob/main/survived_fare.png)
+![Pclass_vs_Survival](https://github.com/CarrieFu05/ML_Titanic-predict/blob/main/survived_pclass.png)
+
+- 生存與否表示：未生存乘客 (Survived = 0)、已生存乘客 (Survived = 1)
+- 從生存與票價關係圖中：已生存乘客的小提琴圖向上延伸得更高，甚至達到超過 500 的票價，而未生存乘客的最高票價則遠低於此；發現票價越高，生存的機會似乎越大
+- 從生存與艙等關係圖中：Pclass越低表示艙等越高級 (Pclass 1>2>3)，在計數圖中 Pclass=1 的存活率明顯大於 Pclass=3 的存活率:發現艙等越高，生存的機會似乎越大
+- 從上兩項發現可以推測票價最高的頭等艙，其乘客可能享有較好的艙位位置，因此在逃生時獲得了優勢，對於生存預測的關聯性極高
+
 
 ### 📌 混淆矩陣
 |                | 預測未存活 | 預測存活 |
@@ -92,10 +100,18 @@ import pandas as pd
 model = joblib.load("Titanic_model_export.pkl")
 
 # 測試資料 (假設已完成前處理)
-X_test = pd.read_csv("test_processed.csv")
+df_test = pd.read_csv("test_processed.csv")
 
 # 預測
 y_pred = model.predict(X_test)
+
+# 結果輸出
+df_submission = pd.DataFrame()
+df_submission["PassengerId"] = df_test["PassengerId"]
+df_submission["Survived"] = y_pred
+
+csv_name = "your_result_file_name.csv"
+df_submission.to_csv(csv_name, index=False)
 ```
 
 ---
