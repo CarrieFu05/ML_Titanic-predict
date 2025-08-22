@@ -93,7 +93,7 @@ pip install -r requirements.txt
 python titanic_model.py
 ```
 
-### 3️⃣ 載入模型並預測
+### 3️⃣ 載入模型、預測並輸出結果
 ```python
 import joblib
 import pandas as pd
