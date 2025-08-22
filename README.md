@@ -65,6 +65,7 @@
 ![Fare_vs_Survival](https://github.com/CarrieFu05/ML_Titanic-predict/blob/main/survived_fare.png)
 ![Pclass_vs_Survival](https://github.com/CarrieFu05/ML_Titanic-predict/blob/main/survived_pclass.png)
 
+### 觀察結果
 - 生存與否表示：未生存乘客 (Survived = 0)、已生存乘客 (Survived = 1)
 - 從生存與票價關係圖中：已生存乘客的小提琴圖向上延伸得更高，甚至達到超過 500 的票價，而未生存乘客的最高票價則遠低於此；發現票價越高，生存的機會似乎越大
 - 從生存與艙等關係圖中：Pclass越低表示艙等越高級 (Pclass 1>2>3)，在計數圖中 Pclass=1 的存活率明顯大於 Pclass=3 的存活率:發現艙等越高，生存的機會似乎越大
@@ -117,13 +118,13 @@ df_submission.to_csv(csv_name, index=False)
 ---
 
 ## 🔮 未來優化方向
--嘗試 隨機森林 (Random Forest)、梯度提升 (XGBoost / LightGBM) 等模型
--特徵工程：新增 FamilySize, Title (從姓名萃取)
+- 嘗試 隨機森林 (Random Forest)、梯度提升 (XGBoost / LightGBM) 等模型
+- 特徵工程：新增 FamilySize, Title (從姓名萃取)
 
 ---
 
 ## 🧑‍💻 技術棧
--Python (pandas, numpy, matplotlib, seaborn, scikit-learn)
--Joblib (模型儲存)
--Kaggle (比賽平台)
+- Python (pandas, numpy, matplotlib, seaborn, scikit-learn)
+- Joblib (模型儲存)
+- Kaggle (比賽平台)
 
